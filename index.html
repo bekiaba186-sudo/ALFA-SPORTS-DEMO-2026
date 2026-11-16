@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1329">
+<title>ALFA Sports — Demo Platform</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brand-mark">A</span><span>ALFA <b>SPORTS</b><small>DEMO PLATFORM</small></span></div>
+  <nav><button class="nav active" data-view="sports" data-i18n="sports">Sports</button><button class="nav" data-view="live" data-i18n="live">Live</button><button class="nav" data-view="virtual" data-i18n="virtual">Virtual</button><button class="nav" data-view="account" data-i18n="account">My Account</button><button class="nav" data-view="admin" data-i18n="admin">Admin</button></nav>
+  <div class="top-actions"><select id="language" aria-label="Language"><option value="en">English</option><option value="am">አማርኛ</option><option value="om">Afaan Oromo</option></select><span class="demo-pill">DEMO ONLY</span></div>
+</header>
+<div class="notice">Demo environment only — credits have no monetary value. No deposits, withdrawals, or real-money wagering.</div>
+<main>
+  <aside class="left">
+    <h3 data-i18n="categories">CATEGORIES</h3>
+    <button class="side active" data-view="sports">⚽ <span data-i18n="football">Football</span></button>
+    <button class="side" data-view="live">🔴 <span data-i18n="liveMatches">Live matches</span></button>
+    <button class="side" data-view="virtual">🎮 <span data-i18n="virtualGames">Virtual games</span></button>
+    <div class="side-card"><small data-i18n="demoBalance">DEMO BALANCE</small><strong id="balanceSide">1,000.00</strong><span>Demo credits</span></div>
+    <div class="side-card responsible"><b data-i18n="responsible">Play responsibly</b><p data-i18n="responsibleText">This prototype is for product testing and education only.</p></div>
+  </aside>
+  <section class="content">
+    <section id="sportsView" class="view">
+      <div class="hero"><div><span class="eyebrow" data-i18n="sportsbook">SPORTS CENTER</span><h1 data-i18n="welcome">Every match. One place.</h1><p data-i18n="heroText">Explore sample fixtures and test the demo bet slip.</p></div><div class="hero-ball">⚽</div></div>
+      <div class="section-head"><div><h2 data-i18n="upcoming">Upcoming matches</h2><p data-i18n="sampleData">Sample data for interface testing</p></div><input id="search" placeholder="Search teams or league..." data-i18n-placeholder="search"></div>
+      <div class="filters"><button class="chip selected" data-filter="all" data-i18n="all">All</button><button class="chip" data-filter="England">England</button><button class="chip" data-filter="Spain">Spain</button><button class="chip" data-filter="Italy">Italy</button></div>
+      <div id="matches" class="matches"></div>
+    </section>
+    <section id="liveView" class="view hidden">
+      <div class="section-head"><div><h1 data-i18n="liveCenter">Live center</h1><p data-i18n="liveDesc">Illustrative match states; no live data connection.</p></div><span class="live-tag">● LIVE DEMO</span></div><div id="liveMatches" class="matches"></div>
+    </section>
+    <section id="virtualView" class="view hidden">
+      <div class="hero virtual-hero"><div><span class="eyebrow">SIMULATION LAB</span><h1 data-i18n="virtualTitle">Virtual games</h1><p data-i18n="virtualDesc">A placeholder for licensed third-party game integrations. No games of chance are enabled.</p></div><div class="hero-ball">🎮</div></div>
+      <div class="empty"><div class="empty-icon">🧩</div><h2 data-i18n="integrationPending">Integration not enabled</h2><p data-i18n="integrationText">Connect only verified, licensed content providers after legal and technical review.</p></div>
+    </section>
+    <section id="accountView" class="view hidden">
+      <div class="section-head"><div><h1 data-i18n="myAccount">My account</h1><p data-i18n="accountDesc">Local demo profile and activity.</p></div></div>
+      <div class="account-grid"><div class="panel"><h3 data-i18n="profile">Demo profile</h3><label>Email / username<input value="demo.user@example.test" disabled></label><label data-i18n="languagePref">Language preference<select id="accountLang"><option>English</option><option>አማርኛ</option><option>Afaan Oromo</option></select></label><p class="muted">Authentication is not connected in this prototype.</p></div><div class="panel"><h3 data-i18n="demoLedger">Demo activity ledger</h3><div id="ledger"></div></div></div>
+    </section>
+    <section id="adminView" class="view hidden">
+      <div class="section-head"><div><h1 data-i18n="adminDashboard">Admin dashboard</h1><p data-i18n="adminDesc">Prototype analytics using sample data only.</p></div><span class="admin-tag">LOCAL DEMO</span></div>
+      <div class="stats"><div class="stat"><small data-i18n="demoUsers">DEMO USERS</small><strong>1</strong><span>Sample account</span></div><div class="stat"><small data-i18n="fixtures">FIXTURES</small><strong id="fixtureCount">6</strong><span>Seeded sample</span></div><div class="stat"><small data-i18n="demoTickets">DEMO TICKETS</small><strong id="ticketCount">0</strong><span>Local browser only</span></div><div class="stat"><small data-i18n="demoCredits">DEMO CREDITS</small><strong id="adminBalance">1,000</strong><span>No cash value</span></div></div>
+      <div class="panel"><h3 data-i18n="adminControls">Prototype controls</h3><p class="muted" data-i18n="adminControlsText">Reset local demo data or export a non-financial test report.</p><div class="button-row"><button class="primary" id="exportBtn" data-i18n="export">Export demo report</button><button class="secondary" id="resetBtn" data-i18n="reset">Reset demo</button></div></div>
+      <div class="panel"><h3>Production readiness gates</h3><ul class="checklist"><li>Jurisdiction-specific legal opinion and operating licence</li><li>Age / identity verification and AML controls</li><li>Independent security and RNG / game certification where applicable</li><li>Approved payment provider and safeguarded funds model</li><li>Responsible-gambling controls and regulator reporting</li><li>Privacy, data-retention, incident-response and audit policies</li></ul></div>
+    </section>
+  </section>
+  <aside class="right">
+    <div class="slip-head"><h3 data-i18n="betSlip">Demo selection slip</h3><span id="slipCount">0</span></div>
+    <div id="slipItems" class="slip-items"><div class="slip-empty" data-i18n="slipEmpty">Choose a sample outcome to add it here.</div></div>
+    <div class="stake-area"><label data-i18n="demoStake">Demo stake (credits)</label><input id="stake" type="number" min="1" max="1000" value="10"><div class="estimate"><span data-i18n="illustrativeReturn">Illustrative return</span><b id="returnValue">0.00</b></div><button id="placeDemo" class="primary wide" disabled data-i18n="placeDemo">Place demo selection</button><p class="tiny" data-i18n="demoWarning">No real money or cash-equivalent value. Demo only.</p></div>
+  </aside>
+</main>
+<div id="toast" role="status"></div>
+<footer>© 2026 ALFA Sports Demo · Educational prototype · Not a licensed betting service</footer>
+<script src="app.js"></script>
+</body></html>
